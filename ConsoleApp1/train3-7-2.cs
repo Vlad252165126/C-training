@@ -1,17 +1,13 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    internal class train3_7_2
     {
-        //lastname;group
-
         struct train
         {
             public string punkt;
@@ -24,8 +20,8 @@ namespace ConsoleApp1
                 this.number = number;
                 this.date = date;
             }
-         
-           public static void addtoarray(train[] array)
+
+            public static void addtoarray(train[] array)
             {
                 for (int i = 0; i < array.Length; i++)
                 {
@@ -45,8 +41,8 @@ namespace ConsoleApp1
 
                 }
             }
-        public static  void Show(train[] train)
-        {
+            public static void Show(train[] train)
+            {
 
                 for (int i = 0; i < train.Length; i++)
                 {
@@ -57,7 +53,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Поиск пункта назначения");
                 string punkt = Console.ReadLine();
-                bool check= true;
+                bool check = true;
                 for (int i = 0; i < train.Length; i++)
                 {
                     while (check == true)
@@ -71,16 +67,12 @@ namespace ConsoleApp1
                 }
             }
         }
-        static void Main(string[] args)
+        public static void start()
         {
-            train3_7_2.start();
-
-            Console.ReadKey();
+            train[] array = new train[1];
+            train.addtoarray(array);
+            train.Show(array);
+            train.Search(array);
         }
-
     }
-
-
-
 }
-
